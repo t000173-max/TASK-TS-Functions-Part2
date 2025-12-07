@@ -1,3 +1,5 @@
+import { el } from "@faker-js/faker/.";
+
 /**
  * greet(name):
  * - Accepts a "name" parameter of type "string"
@@ -7,6 +9,8 @@
  * greet("Hamza") logs "Hello Hamza"
  */
 function greet(name: string): void {
+  console.log(`Hello ${name}`);
+
   // Your code here
 }
 
@@ -20,6 +24,7 @@ function greet(name: string): void {
  * isOdd(10) -> false
  */
 function isOdd(n: number): boolean {
+  return n % 2 !== 0;
   // Your code here
 
   return false; // replace false with what you see is fit
@@ -35,10 +40,20 @@ function isOdd(n: number): boolean {
  * oddsSmallerThan(15) -> 7; // the odd numbers being 1, 3, 5, 7, 9, 11, 13
  */
 function oddsSmallerThan(n: number): number {
+  let count = 0;
+
+  for (let i = 1; i < n; i++) {
+      if (i % 2 !== 0) {
+          count++;
+      }
+  }
+
+  return count;
+}
   // Your code here
 
-  return -1; // replace -1 with what you see is fit
-}
+ // return -1; // replace -1 with what you see is fit
+
 
 /**
  * squareOrDouble(n):
@@ -51,9 +66,12 @@ function oddsSmallerThan(n: number): number {
  * squareOrDouble(9) -> 81; // (9 ^ 2)
  */
 function squareOrDouble(n: number): number {
-  // Your code here
-
-  return -1; // replace -1 with what you see is fit
+  if (n % 2 ===0) {
+    return n*2;
+  }else{
+    return n * n;
+  }
 }
+  
 
 export { greet, isOdd, oddsSmallerThan, squareOrDouble };
